@@ -28,5 +28,8 @@ xlabel('Frequency(Hz)')
 ylabel('Amplitude')
 title('Amplitude Spectrum of signal')
 
-
+% Result of amplitude spectrum evaluated:
+% Manually: two components at +-440Hz with amplitude A/2
+% Matlab: two components at +-440 Hz using frequency = m*(fs/N), each have
+% amplitude A/2 (overall amplitude is always halved)
 
