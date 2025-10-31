@@ -16,35 +16,15 @@ c =  ((A*w0*a)/pi) .* sinc((m*w0*a)/pi); % Spectral coefficients according to (1
 %% --------------------- PLOTTING --------------------- %
 figure;
 subplot(2,1,1);
-stem(m, abs(c), "filled");
+stem(m, abs(c), filled);
 xlabel('m');
 ylabel('C_m');
 title('Amplitude Spectrum');
 grid on;
 
 subplot(2,1,2);
-stem(m, angle(c), "filled");
+stem(m, angle(c));
 xlabel('m');
 ylabel('Theta');
 title('Phase Spectrum');
 grid on;
-
-%% --------------------- INITIALIZATION OF VECTORS  --------------------- %
-t = -t_max:Ts:t_max; % From – t_max to t_max with step Ts
-f = c(m==0)*ones(size(t)); % Signal initialization by c0, according to (5)
-
-
-%% Inverse Fourier series and displays follow
-subplot(2,1,2) % Selection of the lower part of the figure
-for n = 1:M
-
- % Here you should make use of the logical indexing of vector c:
- % f = f + ? + ?; % Write code for inv. Fourier series using (5)
-    f = 
- % ? % Display current signal approximation
- % ? % Add a label to x axis
- y_label = ['f_{' num2str(n) '}(t)']; % Text string for the y axis
- ylabel(y_label) % Add label to y axis
- drawnow % Update figure
- pause(0.5) % Wait for 0.5 seconds. (Adjust if needed.)
-end
