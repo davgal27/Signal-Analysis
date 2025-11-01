@@ -40,11 +40,18 @@ for n = 1:M
 
  % Here you should make use of the logical indexing of vector c:
  % f = f + ? + ?; % Write code for inv. Fourier series using (5)
-    f = 
+    f = f + c(m == -n)*exp(-1j*w0*n*t) + c(m == n)*exp(1j*w0*n*t);
  % ? % Display current signal approximation
+ plot (t, real(f));
  % ? % Add a label to x axis
+ xlabel('Time (t)')
  y_label = ['f_{' num2str(n) '}(t)']; % Text string for the y axis
  ylabel(y_label) % Add label to y axis
  drawnow % Update figure
- pause(0.5) % Wait for 0.5 seconds. (Adjust if needed.)
+ pause(0.01) % Wait for 0.5 seconds. (Adjust if needed.)
 end
+
+%% OVERSHOOT % 
+overshoot = max(real(f)) - A;
+percentage = (overshoot / A)*100;
+fprintf('Overshoot = %.3f%%', percentage);
