@@ -1,0 +1,6 @@
+%% -----Modelling a Discrete-Time System----%
+%% LDS : y(n) = 0.2x(n)-0.2x(n-5)+y(n-1)
+%% coeffs: 
+b = {0.2,0,0,0,0,-0.2}
+a = {1,-1,0,0,0,0}
+imp_resp
